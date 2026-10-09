@@ -22,3 +22,9 @@ As três páginas foram testadas em 13 larguras entre 320 e 1920px (39 combinaç
 ## Texto para o formulário acadêmico
 
 Implementei menu responsivo com botão hambúrguer abaixo de 900px e dropdown Participar em HTML semântico. Os controles funcionam por teclado e utilizam atributos de acessibilidade. Os cards possuem feedback visual de hover e foco e botões que abrem modais informativos. Os botões apresentam estados hover, foco, ativo e desabilitado. O formulário combina restrições HTML, máscaras, mensagens por campo, aria-invalid, aria-describedby e estilos de valid/invalid após interação. Alertas contextuais apresentam erros e confirmação demonstrativa. Os modais utilizam dialog e showModal, com fechamento por Escape ou botão e retorno do foco. As animações respeitam a preferência por movimento reduzido. As funcionalidades foram verificadas nas três páginas, preservando o caráter demonstrativo do cadastro.
+
+## Evidências visuais e badges
+
+Os cards agora incluem etiquetas textuais Educação e Apoio comunitário. `.badge` usa inline-flex, fonte de 0.8rem, peso 700, padding modular, borda e cantos arredondados. As variantes `.badge-education` e `.badge-community` reutilizam as variáveis de azul e verde e seus fundos claros. As categorias são comunicadas por texto, além da cor. Não foi implementado toast: a evidência da atividade utiliza os modais existentes.
+
+Capturas PNG produzidas diretamente no navegador: cards com badges, alerta de erro com mensagens por campo, alerta de confirmação demonstrativa e modal informativo aberto. O formulário foi preenchido apenas com dados fictícios para gerar a captura de sucesso.

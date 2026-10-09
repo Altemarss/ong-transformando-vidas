@@ -165,3 +165,8 @@ dialog::backdrop { background: #102e43b3; }
 @media (prefers-reduced-motion: reduce) {
  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Etiquetas textuais de categoria: a informação não depende apenas da cor. */
+.badge { display: inline-flex; align-self: flex-start; align-items: center; padding: var(--space-1) var(--space-3); border: 1px solid currentColor; border-radius: var(--radius-large); font-size: var(--font-size-1); font-weight: 700; line-height: var(--line-height-body); }
+.badge-education { color: var(--color-primary); background: var(--color-background); }
+.badge-community { color: var(--color-button); background: var(--color-success-surface); }
