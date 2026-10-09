@@ -12,14 +12,22 @@ Implementação em `css/style.css`, compartilhada por `index.html`, `projetos.ht
 
 ## Grid, Flexbox e responsividade
 
-`main.wrap` e `.cards` usam CSS Grid com 12 colunas e `minmax(0, 1fr)`. Os blocos principais ocupam as 12 colunas. Os cards ocupam 12 colunas inicialmente e 6 a partir de 37.5rem. Flexbox organiza cabeçalho, navegação, botões, conteúdo dos cards e formulário.
+`main.wrap` e `.cards` usam CSS Grid com 12 colunas e `minmax(0, 1fr)`. Os blocos principais ocupam as 12 colunas. Os cards ocupam 12 colunas inicialmente e 6 a partir de 600px. Flexbox organiza cabeçalho, navegação, botões, conteúdo dos cards e formulário.
 
-Breakpoints mobile-first: 37.5rem (600px), 56.25rem (900px) e 75rem (1200px), com raiz padrão de 16px. Ajustam cards, destaque inicial, cabeçalho e espaçamento. As condições das media queries usam valores literais, pois variáveis CSS não são suportadas nessas condições.
+Cinco breakpoints mobile-first, definidos explicitamente em pixels:
+
+- **480px:** navegação com gap de 24px e preenchimento de seções e fieldsets de 32px.
+- **600px:** cards passam de 12 para 6 colunas; destaque inicial com padding de 64px na vertical e 36px na horizontal.
+- **900px:** cabeçalho sem quebra de linha e gap dos cards de 24px.
+- **1200px:** gap do conteúdo principal de 32px.
+- **1440px:** largura máxima do contêiner passa de 1050 para 1200px, gap principal de 36px e padding horizontal do destaque de 48px.
+
+Os valores de espaçamento e contêiner acima consideram a fonte raiz padrão de 16px. O layout base atende às telas abaixo de 480px e as regras se acumulam conforme a largura aumenta. As condições das media queries usam valores literais, pois variáveis CSS não são suportadas nessas condições.
 
 ## Texto para o formulário acadêmico
 
-Atualizei o CSS compartilhado das três páginas com um design system em :root: 15 variáveis de cores aplicadas à interface, cinco níveis tipográficos em escala de razão 1,25 e espaçamentos em múltiplos de 0,25rem. Implementei CSS Grid de 12 colunas no conteúdo principal e nos projetos, com cards de 12 colunas em telas pequenas e 6 a partir de 600px. Utilizei Flexbox no cabeçalho, navegação, botões, cards e formulário. Adicionei breakpoints de 600, 900 e 1200px, preservando o HTML e o JavaScript das páginas existentes.
+Atualizei o CSS compartilhado das três páginas com um design system em :root: 15 variáveis de cores aplicadas à interface, cinco níveis tipográficos em escala de razão 1,25 e espaçamentos em múltiplos de 0,25rem. Implementei CSS Grid de 12 colunas no conteúdo principal e nos projetos, com cards de 12 colunas em telas pequenas e 6 a partir de 600px. Utilizei Flexbox no cabeçalho, navegação, botões, cards e formulário. Adicionei cinco breakpoints de 480, 600, 900, 1200 e 1440px, preservando o HTML e o JavaScript das páginas existentes.
 
 ## Verificação realizada
 
-As três páginas foram carregadas no Chrome headless em 320, 375, 600, 900 e 1200px (15 combinações). Foram confirmadas 12 colunas no conteúdo principal, cards com spans 12/6 conforme a largura, carregamento das imagens, cinco tamanhos tipográficos computados e ausência de transbordamento horizontal. Também foram confirmadas as máscaras de CPF, telefone e CEP e a mensagem de sucesso do envio demonstrativo. `git diff --check` passou. Esta verificação não substitui a validação formal no W3C.
+As três páginas foram carregadas no Chrome headless em 320, 375, 479, 480, 599, 600, 899, 900, 1199, 1200, 1439, 1440 e 1920px (39 combinações). Foram verificados os valores computados de espaçamento, preenchimento, largura do contêiner e quebra do cabeçalho antes e depois de cada breakpoint. Foram confirmadas 12 colunas no conteúdo principal, cards com spans 12/6 conforme a largura, carregamento das imagens, cinco tamanhos tipográficos computados e ausência de transbordamento horizontal. Também foram confirmadas as máscaras de CPF, telefone e CEP e a mensagem de sucesso do envio demonstrativo. `git diff --check` passou. Esta verificação não substitui a validação formal no W3C.

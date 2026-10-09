@@ -94,14 +94,23 @@ input:focus, select:focus, textarea:focus { outline: 3px solid var(--color-focus
 footer { font-size: var(--font-size-1); background: var(--color-footer); color: var(--color-surface); padding-block: var(--space-6); }
 address { font-style: normal; }
 /* Media queries usam valores literais: var() não funciona nas condições. */
-@media (min-width: 37.5rem) {
+@media (min-width: 480px) {
+  nav { gap: var(--space-6); }
+  section, fieldset { padding: var(--space-8); }
+}
+@media (min-width: 600px) {
   .card { grid-column: span 6; }
   .hero { padding: var(--space-16) var(--space-9); }
 }
-@media (min-width: 56.25rem) {
+@media (min-width: 900px) {
   .top { flex-wrap: nowrap; }
   .cards { --grid-gap: var(--space-6); }
 }
-@media (min-width: 75rem) {
+@media (min-width: 1200px) {
   main.wrap { --grid-gap: var(--space-8); }
+}
+@media (min-width: 1440px) {
+  :root { --container-width: 75rem; }
+  main.wrap { --grid-gap: var(--space-9); }
+  .hero { padding-inline: var(--space-12); }
 }
